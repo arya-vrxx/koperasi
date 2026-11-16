@@ -2,9 +2,11 @@
 // addProducts.php
 require_once "database.php";
 require_once "products.php";
+
+$db = new Database();
+$produk = new Products($db->getConnection());
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $db = new Database();
-    $produk = new Products($db->getConnection());
     $produk->addProducts($_POST['nama'], $_POST['harga'], $_POST['stok']);
     header("Location: index.php");
     exit;

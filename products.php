@@ -46,7 +46,12 @@ class Products
         return $stmt->execute([$id]);
     }
 
-
+    public function cariNama($kata)
+{
+    $stmt = $this->pdo->prepare("SELECT * FROM products WHERE productName LIKE ? ORDER BY id");
+    $stmt->execute(["%$kata%"]);
+    return $stmt->fetchAll();
+}
 
 
 
