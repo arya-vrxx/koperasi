@@ -1,0 +1,168 @@
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --danger: #ef4444;
+    --danger-dark: #dc2626;
+    --bg: #f3f4f8;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: #fff;
+    padding: 36px 20px 80px;
+    text-align: center;
+}
+.header h1 { margin: 0 0 4px; font-size: 28px; letter-spacing: .3px; }
+.header p  { margin: 0; opacity: .85; font-size: 14px; }
+
+/* Card */
+.container {
+    max-width: 880px;
+    margin: -50px auto 40px;
+    padding: 0 16px;
+}
+.container.narrow { max-width: 480px; }
+
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(17, 24, 39, .10);
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+.toolbar h2 { margin: 0; font-size: 18px; }
+.badge {
+    background: #eef2ff;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-left: 8px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .15s, transform .15s, box-shadow .15s;
+}
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(79, 70, 229, .3);
+}
+.btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+}
+.btn-ghost:hover { background: #f9fafb; color: var(--text); box-shadow: none; }
+
+.btn-sm { padding: 5px 12px; font-size: 13px; border-radius: 8px; }
+.btn-edit   { background: #eef2ff; color: var(--primary); }
+.btn-edit:hover { background: #e0e7ff; box-shadow: none; }
+.btn-delete { background: #fef2f2; color: var(--danger); }
+.btn-delete:hover { background: #fee2e2; color: var(--danger-dark); box-shadow: none; }
+
+/* Table */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+thead th {
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: var(--muted);
+    background: #f9fafb;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+}
+tbody td {
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+tbody tr { transition: background .15s; }
+tbody tr:hover { background: #f5f6ff; }
+tbody tr:last-child td { border-bottom: none; }
+.num { text-align: right; }
+.actions { white-space: nowrap; }
+
+.stock {
+    display: inline-block;
+    min-width: 36px;
+    text-align: center;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #ecfdf5;
+    color: #059669;
+}
+.stock.low { background: #fffbeb; color: #d97706; }
+.stock.out { background: #fef2f2; color: var(--danger); }
+
+.empty { text-align: center; color: var(--muted); padding: 40px 0 20px; }
+
+/* Form */
+.form-group { margin-bottom: 16px; }
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+}
+.form-group input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    background: #fafafa;
+    transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.form-group input:focus {
+    outline: none;
+    background: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, .15);
+}
+.form-actions { display: flex; gap: 10px; margin-top: 22px; }
+.form-actions .btn { flex: 1; text-align: center; }
+
+.card h2.title { margin: 0 0 20px; font-size: 20px; }
